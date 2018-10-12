@@ -324,7 +324,7 @@ static CGFloat const kStretchOffsetYAxisThreshold = 1.0;
         _alertLabel = [KafkaLabel new];
         _alertLabel.textAlignment = NSTextAlignmentCenter;
         _alertLabel.font =  [UIFont fontWithName:@"PingFang-SC-Regular" size:13.f];
-        _alertLabel.textColor = _fillColor;
+        _alertLabel.textColor = _themeColor;
         _alertLabel.alpha = 0.0;
         _alertLabel.backgroundColor = [UIColor whiteColor];
     }
