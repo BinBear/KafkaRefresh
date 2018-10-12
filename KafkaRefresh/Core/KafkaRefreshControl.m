@@ -120,7 +120,9 @@ static CGFloat const kStretchOffsetYAxisThreshold = 1.0;
 - (void)setAlertTextColor:(UIColor *)alertTextColor{
 	_alertLabel.textColor = alertTextColor;
 }
-
+- (void)setAlertBackgroundColor:(UIColor *)backgroundColor {
+    _alertLabel.backgroundColor = backgroundColor;
+}
 - (void)setRefreshState:(KafkaRefreshState)refreshState{
 	if (_refreshState == refreshState) return;
 	_refreshState = refreshState;
@@ -318,15 +320,14 @@ static CGFloat const kStretchOffsetYAxisThreshold = 1.0;
 #pragma mark - getter
 
 - (KafkaLabel *)alertLabel{
-	if (!_alertLabel) {
-		_alertLabel = [KafkaLabel new];
-		_alertLabel.textAlignment = NSTextAlignmentCenter;
-		_alertLabel.font =  [UIFont fontWithName:@"Helvetica" size:15.f];
-		_alertLabel.textColor = _themeColor;
-		_alertLabel.alpha = 0.0;
-		_alertLabel.backgroundColor = [UIColor whiteColor];
-	}
-	return _alertLabel;
+    if (!_alertLabel) {
+        _alertLabel = [KafkaLabel new];
+        _alertLabel.textAlignment = NSTextAlignmentCenter;
+        _alertLabel.font =  [UIFont fontWithName:@"PingFang-SC-Regular" size:13.f];
+        _alertLabel.textColor = _fillColor;
+        _alertLabel.alpha = 0.0;
+        _alertLabel.backgroundColor = [UIColor whiteColor];
+    }
+    return _alertLabel;
 }
-
 @end

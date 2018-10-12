@@ -15,7 +15,7 @@
 
 - (void)layoutSubviews {
 	[super layoutSubviews]; 
-	self.kr_top = self.scrollView.contentHeight;
+    self.kr_top = (self.scrollView.contentHeight <= self.scrollView.kaf_height - self.scrollView.contentInset.top ? (self.scrollView.kaf_height - self.scrollView.contentInset.top) : self.scrollView.contentHeight);
 }
 
 - (void)setScrollViewToRefreshLocation {
